@@ -1,0 +1,18 @@
+import os
+
+#ippy.txt is the name of the file with the ip addresses
+#change the filename to the text file with your ip address list
+#pingy.csv is the name of the excel file it writes to
+#change the file name of the excel file to whatever you want
+
+with open('ippy.txt') as readip:
+  ipaddy = readip.read().splitlines()
+  for ipdad in apaddy:
+    response = os.system("ping -n 1 " + ipadd)
+    if response == 0:
+      ipfunc = open("pingy.csv",'a')
+      ipfunc.writelines(ipadd + " - ONLINE" + "\n")
+      
+    else:
+      ipfunc = open("pingy.csv",'a')
+      ipfunc.write(ipadd + " - OFFLINE" + "\n")
