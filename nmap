@@ -1,5 +1,7 @@
-#import nmap
 #ip of network <ip address/range>
+
+import nmap
+#!/usr/bin/python
 
 nm.scan(hosts='<ip address/range>',arguments="-O -v")
 
