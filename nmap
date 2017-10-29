@@ -1,0 +1,16 @@
+#import nmap
+#ip of network <ip address/range>
+
+nm.scan(hosts='<ip address/range>',arguments="-O -v")
+
+#port scanner
+#port scanner async
+
+nm = nmap.PortScannerAsync()
+def callback_result(host, scan_result):
+  print host, scan_result
+  
+nm.scan('<ip address/range>', arguments="-O -v", callback=callback_result)
+while nm.still_scanning():
+    print("standby...")
+    nm.wait(2)  
